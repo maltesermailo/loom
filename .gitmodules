@@ -1,0 +1,15 @@
+# loom-meta submodules. URLs are the absolute GitHub forge URLs so a fresh
+# `git clone --recurse-submodules` resolves them correctly. Each submodule's
+# local .git/config keeps its on-disk path (we do NOT `git submodule sync`), so
+# day-to-day work here resolves offline against the sibling repos in $HOME/loom.
+# Note: host/ and client/ each pin spec/ at their own commit via their OWN
+# .gitmodules (also loom-spec.git); that pin may lag this superrepo's spec/.
+[submodule "spec"]
+	path = spec
+	url = https://github.com/maltesermailo/loom-spec.git
+[submodule "host"]
+	path = host
+	url = https://github.com/maltesermailo/loom-host.git
+[submodule "client"]
+	path = client
+	url = https://github.com/maltesermailo/loom-client.git
