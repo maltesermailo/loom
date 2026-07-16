@@ -1,9 +1,15 @@
 # Review — M2 Close (macOS host)
 
-**Status:** M2.1 and M2.2 complete. M2.3 partially met — two acceptance criteria cannot be met
-as written, both for reasons outside the host pipeline, both escalated below rather than worked
-around. `check.sh` green in `host/` and `client/`.
+**Status:** **M2 closed** (decision, 2026-07-16). M2.1 and M2.2 meet their criteria outright.
+M2.3 closes on loopback evidence with two criteria explicitly not met — the 1440p encode budget
+(hardware floor, §4.1) and 1440p e2e (client-bound, §4.2) — and the WiFi leg waived (§4.3). M2's
+exit criterion, "both hosts interchangeable from the client's perspective", is met: the SDL client
+cannot distinguish them except by the WELCOME name. `check.sh` green in `host/` and `client/`.
 **Scope:** ScreenCaptureKit capture, VideoToolbox encode, full-Mac loopback measurement.
+
+**Still owed to the spec, by a human** (`spec/` is read-only to the agent session):
+ARCHITECTURE §10's VideoToolbox encode budget is wrong (§4.1), and ROADMAP needs the M2 ticks plus
+a correction to M1's status line, which still says M1.4–M1.5 await the Linux box.
 
 ---
 
@@ -104,7 +110,8 @@ territory. Until then 720p is the measured configuration.
 
 ### 4.3 Over WiFi to a second machine
 
-Not run — no second machine available. M2.3's WiFi leg is **unmet**, loopback evidence only.
+**Waived** (decision, 2026-07-16) — not run, and not owed. M2 closes on loopback evidence. The
+first real over-the-air numbers will come from M3.3, which streams to the Quest over WiFi anyway.
 
 ---
 
